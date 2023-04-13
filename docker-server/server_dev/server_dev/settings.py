@@ -47,9 +47,12 @@ SYSTEM_APPS: list = [
 
 CUSTOM_APPS: list = [
     "users.apps.UsersConfig",
+    "variable_translation.apps.VariableTranslationConfig",
 ]
 
-THIRD_PARTY_APPS: list = []
+THIRD_PARTY_APPS: list = [
+    "rest_framework",
+]
 
 INSTALLED_APPS: list = SYSTEM_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
