@@ -1,4 +1,54 @@
 
+## Swagger
+
+### package 설치
+```shell
+pip install drf-yasg
+```
+
+### 메인 app 설정
+#### server_dev/settings.py
+```python
+THIRD_PARTY_APPS: list = [
+    # 중략
+    "drf_yasg",
+]
+```
+
+#### server_dev/urls.py
+```python
+schema_view = get_schema_view(
+    openapi.Info(
+        title="variable-maker",
+        default_version="1.0.0",
+        description="variable-maker API 문서",
+    ),
+    public=True,
+)
+
+
+urlpatterns = [
+    # 중략
+    path(
+        "api/v1/",
+        include(
+            [
+                path(
+                    "swagger/schema/",
+                    schema_view.with_ui("swagger", cache_timeout=0),
+                    name="swagger-schema",
+                ),
+                # 중략
+            ]
+        ),
+    ),
+]
+```
+title: 프로젝트 이름  
+default_version : 프로젝트 버전  
+description : 문서 설명
+
+
 ## Papago api 활용
 
 ### Papago API - EndPoint & Method
