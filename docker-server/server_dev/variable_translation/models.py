@@ -8,6 +8,7 @@ class TranslatedVariables(models.Model):
 
     korean_word: str = models.CharField(
         max_length=50,
+        unique=True,
         help_text="한글로 입력한 단어",
     )
     translated_variable: str = models.CharField(

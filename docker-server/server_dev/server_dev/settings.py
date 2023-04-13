@@ -154,3 +154,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Auth
 AUTH_USER_MODEL = "users.User"
+
+
+# Key
+PPG_ID = env("PPG_ID")
+PPG_SECRET = env("PPG_SECRET")
