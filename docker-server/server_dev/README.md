@@ -87,3 +87,5 @@ description : 문서 설명
 - 등등...
 
 text는 UTF-8 인코딩, 5000자 이하
+
+## variable_translation - papago api 를 활용한 변수 만들기 앱
