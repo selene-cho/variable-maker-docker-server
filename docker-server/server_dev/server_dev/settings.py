@@ -33,6 +33,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+# CORS 관련
+CORS_ORIGIN_WHITELIST = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+    "http://223.130.128.91",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 
 # Application definition
 
@@ -54,11 +63,13 @@ CUSTOM_APPS: list = [
 THIRD_PARTY_APPS: list = [
     "rest_framework",
     "drf_yasg",
+    "corsheaders",
 ]
 
 INSTALLED_APPS: list = SYSTEM_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

@@ -2,7 +2,7 @@ from django.conf import settings
 import openai
 
 # openai.api_key = settings.OPENAI_API_KEY
-openai.api_key = "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"
+# openai.api_key = ""
 
 
 response = openai.Completion.create(
@@ -17,3 +17,9 @@ response = openai.Completion.create(
 
 print(response)
 print(response["choices"][0]["text"])
+"""
+1. Tchr.
+2. Tch.
+3. Teach.
+4. Tchr.
+"""
