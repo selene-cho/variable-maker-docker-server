@@ -10,7 +10,7 @@ from .serializers import TranslatedVariablesSerializer
 class VariableTranslate(APIView):
     """
 
-    api/v1/variabletranslate/search/?query=search_term
+    api/v1/variabletranslate/search/?word=search_term
     """
 
     def get_api_data(self, query_param):
@@ -50,7 +50,7 @@ class VariableTranslate(APIView):
             return {"result": response.text}
 
     def get(self, request):
-        query_param = request.GET.get("query")
+        query_param = request.GET.get("word")
         if query_param:
             translated_variables = TranslatedVariables.objects.filter(
                 korean_word=query_param
