@@ -48,6 +48,7 @@ SYSTEM_APPS: list = [
 CUSTOM_APPS: list = [
     "users.apps.UsersConfig",
     "variable_translation.apps.VariableTranslationConfig",
+    "variable_abbreviation.apps.VariableAbbreviationConfig",
 ]
 
 THIRD_PARTY_APPS: list = [
@@ -159,3 +160,4 @@ AUTH_USER_MODEL = "users.User"
 # Key
 PPG_ID = env("PPG_ID")
 PPG_SECRET = env("PPG_SECRET")
+OPENAI_API_KEY = env("OPENAI_API_KEY")
