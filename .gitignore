@@ -1,6 +1,7 @@
 docker-server/server_dev/.idea
 docker-server/server_dev/.env
 docker-server/server_dev/db.sqlite3
+docker-server/server_dev/env
 docker-server/log
 .idea
 *.env
