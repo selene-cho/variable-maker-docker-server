@@ -8,4 +8,5 @@ class TranslatedVariablesSerializer(serializers.ModelSerializer):
         fields = (
             "korean_word",
             "translated_variable",
+            "count",
         )

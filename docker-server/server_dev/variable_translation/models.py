@@ -15,6 +15,10 @@ class TranslatedVariables(models.Model):
         max_length=50,
         help_text="번역된 결과 단어",
     )
+    count = models.IntegerField(
+        default=1,
+        help_text="단어가 검색된 횟수",
+    )
 
     class Meta:
         managed: bool = True
