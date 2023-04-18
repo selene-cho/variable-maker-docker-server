@@ -75,6 +75,9 @@ class VariableTranslate(APIView):
                     serializer.save()
 
             else:
+                # 검색 횟수 증가 로직
+                translated_variables[0].count = translated_variables[0].count + 1
+                translated_variables[0].save()
                 # 검색이 된다면
                 # print(translated_variables[0].korean_word)
                 # print(translated_variables[0].translated_variable)
