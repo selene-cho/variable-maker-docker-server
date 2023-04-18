@@ -5,3 +5,6 @@ docker-server/server_dev/env
 docker-server/log
 .idea
 *.env
+
+*.pyc
+docker-server/server_dev/__pycache__/
