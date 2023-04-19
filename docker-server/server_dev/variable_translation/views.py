@@ -71,11 +71,13 @@ class VariableTranslate(APIView):
                 TranslatedVariables.objects.create(
                     korean_word=query_param,
                     translated_variable=translated_variable,
+                    count=1,
                 )  # DB에 create
                 serializer = TranslatedVariablesSerializer(
                     data={
                         "korean_word": query_param,
                         "translated_variable": translated_variable,
+                        "count": 1,
                     }
                 )
                 if serializer.is_valid():
