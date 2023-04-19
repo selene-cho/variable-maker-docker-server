@@ -43,6 +43,13 @@ class VariableTranslate(APIView):
             start = raw_response_text.find('"translatedText"')
             end = raw_response_text.find('"engineType"')
             translated_variable = raw_response_text[start + 18 : end - 2]
+            # print(translated_variable)
+            if translated_variable.startswith("a "):
+                translated_variable = translated_variable[2:]
+            if translated_variable.startswith("the "):
+                translated_variable = translated_variable[4:]
+            if translated_variable.startswith("an "):
+                translated_variable = translated_variable[3:]
             # return {"result": final_result}
             return translated_variable
         else:
