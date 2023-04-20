@@ -26,6 +26,7 @@ urlpatterns = [
                     name="swagger-schema",
                 ),
                 path("variabletranslate/", include("variable_translation.urls")),
+                path("variableabbreviate/", include("variable_abbreviation.urls")),
             ]
         ),
     ),
