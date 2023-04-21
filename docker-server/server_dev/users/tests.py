@@ -5,8 +5,8 @@ def main(string):
 
     text = string
 
-    client_id = "kwzvitt6q7"
-    client_secret = "ivU998dq6eKMnyOUe5kImyDfwgF06ILTpq2d8KBh"
+    client_id = "akor1kwzvitt6q7"
+    client_secret = "akor1ivU998dq6eKMnyOUe5kImyDfwgF06ILTpq2d8KBh"
 
     url = "https://naveropenapi.apigw.ntruss.com/nmt/v1/translation"
 
@@ -39,5 +39,5 @@ if __name__ == "__main__":
 
     print(result)
     start = result.find('"translatedText"')
-    end = result.find('"engineType"')
-    print(result[start + 18 : end - 2])
+    end = result.find("}}}")
+    print(result[start + 18 : end - 1])

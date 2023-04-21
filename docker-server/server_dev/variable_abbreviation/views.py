@@ -9,7 +9,10 @@ import re
 
 
 class VariableAbbreviate(APIView):
-    """ """
+    """
+
+    /api/v1/variableabbreviate/search/?word=search_term
+    """
 
     def get_api_data(self, query_param):
         """
