@@ -39,6 +39,7 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://223.130.128.91",
     "http://variablemaker.s3-website.ap-northeast-2.amazonaws.com",
+    "http://variablemaker.kr",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
