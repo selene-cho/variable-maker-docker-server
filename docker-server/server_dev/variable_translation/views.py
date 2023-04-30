@@ -50,6 +50,10 @@ class VariableTranslate(APIView):
                 translated_variable = translated_variable[4:]
             if translated_variable.startswith("an "):
                 translated_variable = translated_variable[3:]
+            if translated_variable.endswith("."):
+                translated_variable = translated_variable[
+                    : len(translated_variable) - 1
+                ]
             # return {"result": final_result}
             return translated_variable
         else:
