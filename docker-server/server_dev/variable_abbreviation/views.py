@@ -5,6 +5,7 @@ from rest_framework import status
 from .models import Variables, AbbreviatedVariables
 from .serializers import VariablesSerializer
 from variable_translation.views import VariableTranslate
+from variable_translation.models import TranslatedVariables
 import openai
 import re
 
@@ -72,10 +73,26 @@ class VariableAbbreviate(APIView):
 
                 # 한글인지 확인
                 if checker:
-                    abbreviated_variable = VariableTranslate.get_api_data(
-                        self, query_param
-                    )
-                    abbreviated_variables = self.get_api_data(abbreviated_variable)
+                    # sql 조회
+                    translated_variable = TranslatedVariables.objects.get(
+                        korean_word=query_param
+                    ).translated_variable
+                    # print(translated_variable)
+
+                    # sql에 없는 경우
+                    if not translated_variable:
+                        translated_variable = VariableTranslate.get_api_data(
+                            self, query_param
+                        )
+                        TranslatedVariables.objects.create(
+                            korean_word=query_param,
+                            translated_variable=translated_variable,
+                            count=1,
+                        )  # DB에 create
+
+                    abbreviated_variables = self.get_api_data(translated_variable)
+                    # print(abbreviated_variables)
+
                 else:
                     abbreviated_variables = self.get_api_data(query_param)
                 # print(abbreviated_variables)
@@ -83,7 +100,7 @@ class VariableAbbreviate(APIView):
                 abbreviated_variables_list = re.findall(
                     r"\b\w+\b", abbreviated_variables
                 )
-                # print(abbreviated_variables_list)
+                print(abbreviated_variables_list)
 
                 # 리스트안에 '.'이나 한 글자인 경우 제외
                 abbreviated_variables_list = [

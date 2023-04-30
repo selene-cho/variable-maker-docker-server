@@ -69,9 +69,9 @@ class VariableTranslate(APIView):
 
             if not translated_variables:
                 # sql에서 검색이 되지 않는다면
-                print(query_param)
+                # print(query_param)
                 translated_variable = self.get_api_data(query_param)
-                print(translated_variable)
+                # print(translated_variable)
                 TranslatedVariables.objects.create(
                     korean_word=query_param,
                     translated_variable=translated_variable,
