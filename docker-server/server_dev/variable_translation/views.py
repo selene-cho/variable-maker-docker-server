@@ -57,7 +57,7 @@ class VariableTranslate(APIView):
             # return {"result": final_result}
             return translated_variable
         else:
-            print("no result")
+            # print("no result")
             return {"result": response.text}
 
     def get(self, request):
