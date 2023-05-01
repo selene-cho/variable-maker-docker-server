@@ -21,7 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -37,11 +36,11 @@ ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:3000",
     "http://localhost:3000",
+    "http://223.130.128.91",
     "https://variablemaker.kr",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
-
 
 # Application definition
 
@@ -99,7 +98,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "server_dev.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -140,7 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -152,7 +149,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -163,10 +159,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
 # Auth
 AUTH_USER_MODEL = "users.User"
-
 
 # Key
 PPG_ID = env("PPG_ID")
