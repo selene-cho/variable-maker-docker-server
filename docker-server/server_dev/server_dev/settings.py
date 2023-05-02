@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:3000",
     "http://localhost:3000",
-    "http://223.130.128.91",
+    "https://223.130.128.91",
     "http://variablemaker.s3-website.ap-northeast-2.amazonaws.com",
     "https://variablemaker.kr",
 ]
