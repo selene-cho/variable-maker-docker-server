@@ -10,6 +10,6 @@ docker-server/log
 docker-server/server_dev/__pycache__/
 
 server_dev/django.key
-server_dev/*.key
+server_dev/.key
 server_dev/django.crt
-server_dev/*.crt
+server_dev/.crt
