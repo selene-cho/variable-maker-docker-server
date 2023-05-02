@@ -9,7 +9,5 @@ docker-server/log
 *.pyc
 docker-server/server_dev/__pycache__/
 
-server_dev/django.key
-server_dev/.key
-server_dev/django.crt
-server_dev/.crt
+docker-server/server_dev/django.key
+docker-server/server_dev/django.crt
