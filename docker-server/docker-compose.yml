@@ -12,8 +12,19 @@ services:
         volumes:
           - ./server_dev:/srv/docker-server
           - ./log:/var/log/nginx
+          # 추가
+          - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+          - ./data/certbot/conf:/etc/letsencrypt
+          - ./data/certbot/www:/var/www/certbot
         depends_on:
           - django
+
+    certbot:
+      image: certbot/certbot
+      restart: unless-stopped
+      volumes:
+        - ./data/certbot/conf:/etc/letsencrypt
+        - ./data/certbot/www:/var/www/certbot
 
     django:
         container_name: django
