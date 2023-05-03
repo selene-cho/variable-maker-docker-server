@@ -1,14 +1,6 @@
 version: '3'
 services:
 
-#    certbot:
-#      image: certbot/certbot
-#      command: certonly --webroot --webroot-path=/root --email akor1@naver.com --agree-tos --no-eff-email -d variablemakerback.duckdns.org
-#      volumes:
-#        - ./certbot/conf/:/etc/letsencrypt
-#        - ./certbot/logs/:/var/log/letsencrypt
-#        - ./certbot/data:/usr/share/nginx/html/letsencrypt
-
     nginx:
         container_name: nginx
         build: ./nginx
@@ -16,7 +8,6 @@ services:
         restart: always
         ports:
           - "80:80"
-#          - "443:443"
         volumes:
           - ./server_dev:/srv/docker-server
           - ./log:/var/log/nginx
@@ -32,4 +23,3 @@ services:
         volumes:
           - ./server_dev:/srv/docker-server
           - ./log:/var/log/uwsgi
-
