@@ -44,11 +44,17 @@ class VariableTranslate(APIView):
             end = raw_response_text.find("}}}")
             translated_variable = raw_response_text[start + 18 : end - 1]
             # print(translated_variable)
-            if translated_variable.startswith("a "):
+            if translated_variable.startswith("a ") or translated_variable.startswith(
+                "A "
+            ):
                 translated_variable = translated_variable[2:]
-            if translated_variable.startswith("the "):
+            if translated_variable.startswith("the ") or translated_variable.startswith(
+                "The "
+            ):
                 translated_variable = translated_variable[4:]
-            if translated_variable.startswith("an "):
+            if translated_variable.startswith("an ") or translated_variable.startswith(
+                "An "
+            ):
                 translated_variable = translated_variable[3:]
             if translated_variable.endswith("."):
                 translated_variable = translated_variable[
