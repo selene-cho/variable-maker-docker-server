@@ -11,3 +11,4 @@ docker-server/server_dev/__pycache__/
 
 docker-server/server_dev/django.key
 docker-server/server_dev/django.crt
+docker-server/nginx/path/to/*.pem
