@@ -45,6 +45,9 @@ CORS_ORIGIN_WHITELIST = [
     "http://variablemaker.kr.s3-website.ap-northeast-2.amazonaws.com",
     "https://variablemaker.kr",
     "http://variablemaker.kr",
+    # 추가
+    "http://variablemaker.com",
+    "http://variablemaker.com.s3-website.ap-northeast-2.amazonaws.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
