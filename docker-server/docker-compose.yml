@@ -7,6 +7,7 @@ services:
         image: docker-server/nginx
         restart: always
         ports:
+          - "80:80"
           - "443:443"
         volumes:
           - ./server_dev:/srv/docker-server
