@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ["*"]
 # SECURE_SSL_REDIRECT = True
 
 # Cors 관련 4일 추가
-CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_ALLOW_ALL = False
 # 4일 추가 끝
 
 # CORS 관련
