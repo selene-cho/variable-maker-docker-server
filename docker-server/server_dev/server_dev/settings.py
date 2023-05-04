@@ -54,12 +54,7 @@ CORS_ORIGIN_WHITELIST = [
     "http://variablemaker.com.s3-website.ap-northeast-2.amazonaws.com",
 ]
 
-# 잠시 블락
-# CORS_ALLOW_CREDENTIALS = True
-
-# 4 추가
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = FALSE
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
